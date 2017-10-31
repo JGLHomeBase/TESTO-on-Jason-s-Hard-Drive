@@ -684,11 +684,13 @@
                                     </a>
                                 </li>
                                 <li><label>Account Settings</label></li>
-                                <li>
-                                    <a href="#AbsoluteURL#pages/secure/users.cfm?user=#SESSION.userID#">
-                                        Update Profile
-                                    </a>
-                                </li>
+                                <cfif SESSION.authLevel LT 5>
+                                    <li>
+                                        <a href="#AbsoluteURL#pages/secure/users.cfm?user=#SESSION.userID#">
+                                            Update Profile
+                                        </a>
+                                    </li>
+                                </cfif>	
                                 <li>
                                     <a href="#AbsoluteURL#pages/login.cfm?action=reset">
                                         Change Password
