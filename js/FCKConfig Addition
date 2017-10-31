@@ -1,0 +1,14 @@
+FCKConfig.ToolbarSets["Basic"] = [
+	['Source','-','NewPage','Preview','-','Templates'],
+	['Cut','Copy','Paste','PasteText','PasteWord','-','Print','SpellCheck'],
+	['Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'],
+	['Image','Table','Rule','Smiley','SpecialChar','PageBreak'],
+	['TextColor','BGColor'],
+
+	'/',
+	['Bold','Italic','Underline','StrikeThrough','-','Subscript','Superscript'],
+	['OrderedList','UnorderedList','-','Outdent','Indent','Blockquote'],
+	['JustifyLeft','JustifyCenter','JustifyRight','JustifyFull'],
+	['Link','Unlink','Anchor'],	['ShowBlocks'], 
+	['FontFormat','FontSize']	// No comma for the last row.
+] ;

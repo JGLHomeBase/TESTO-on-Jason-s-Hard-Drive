@@ -1,0 +1,254 @@
+@charset 'utf-8';
+
+@import 'settings';
+@import 'foundation';
+@import 'motion-ui';
+
+@include foundation-global-styles;
+@include foundation-grid;
+@include foundation-typography;
+@include foundation-button;
+@include foundation-forms;
+@include foundation-visibility-classes;
+@include foundation-float-classes;
+@include foundation-accordion;
+@include foundation-badge;
+@include foundation-breadcrumbs;
+@include foundation-button-group;
+@include foundation-callout;
+@include foundation-close-button;
+@include foundation-drilldown-menu;
+@include foundation-dropdown;
+@include foundation-dropdown-menu;
+@include foundation-flex-video;
+@include foundation-label;
+@include foundation-media-object;
+@include foundation-menu;
+@include foundation-off-canvas;
+@include foundation-orbit;
+@include foundation-pagination;
+@include foundation-progress-bar;
+@include foundation-slider;
+@include foundation-sticky;
+@include foundation-reveal;
+@include foundation-switch;
+@include foundation-table;
+@include foundation-tabs;
+@include foundation-thumbnail;
+@include foundation-title-bar;
+@include foundation-tooltip;
+@include foundation-top-bar;
+
+@include motion-ui-transitions;
+@include motion-ui-animations;
+
+
+// =============
+// Custom Styles
+// =============
+
+.MakeThin{
+    font-weight: 100 !important;
+}
+.MakeGreen {
+    color:$success-color !important;
+}
+.MakeRed {
+    color:$alert-color !important;
+}
+.MakeOrange {
+    color:$warning-color !important;
+}
+.MakeWhite {
+    color:white !important;
+}
+.MakeGray {
+    color:$medium-gray !important;
+}
+.MakeDarkGray {
+    color:$dark-gray !important;
+}
+.MakeLightGray {
+    color:$light-gray !important;
+}
+.MakeLightBlue {
+    color:$info-color !important;
+}
+.MakePrimary {
+    color:$primary-color !important;
+}
+.MakeSecondary {
+    color:$secondary-color !important;
+}
+.MakeBlack {
+    color:black !important;
+}
+
+
+
+// HIGHLIGHT
+.Highlight{
+   background-color: yellow;
+   color: $body-font-color;
+}
+.HighlightBlue{
+   background-color:lighten($info-color, 20%) !important;
+   color: $body-font-color !important;
+}
+.HighlightWhite{
+   background-color: white;
+   color: $body-font-color;
+}
+.HighlightBlack{
+   background-color: black;
+   color: white;
+}
+.Outline{
+    border-style: solid;
+    border-width: thin;
+    border-color:$primary-color;
+}
+
+
+
+// CONTAINER
+.TinyBox{
+    height:75px;
+}
+.SmallBox{
+    height:150px;
+}
+.Box{
+    height:250px;
+}
+.HotBox{
+    height:420px;
+}
+.HotBoxHome{
+  height:400px;
+  padding-top:320px;
+}
+.BigBox{
+    height:600px;
+}
+.panel {
+    @include callout($light-gray);
+}
+.shoeBox {
+  @include callout($light-gray);
+  width: 100%;
+  margin: 0;
+  position: fixed;
+  bottom: 0;
+}
+
+// ALERT
+.AJAXStart {
+    background-color:$warning-color !important;
+    opacity: 1;
+    transition: opacity .42s ease-in-out;
+   -moz-transition: opacity .42s ease-in-out;
+   -webkit-transition: opacity .42s ease-in-out;
+}
+.AJAXSuccess {
+    background-color:$success-color !important;
+    opacity: 1;
+    transition: opacity .42s ease-in-out;
+   -moz-transition: opacity .42s ease-in-out;
+   -webkit-transition: opacity .42s ease-in-out;
+}
+
+// BACKGROUND
+.BGGreen {
+    background-color:$success-color !important;
+}
+.BGRed {
+    background-color:$alert-color !important;
+}
+.BGOrange {
+    background-color:$warning-color !important;
+}
+.BGGray {
+    background-color:$medium-gray !important;
+}
+.BGLightGray {
+    background-color:$light-gray !important;
+}
+.BGLightBlue {
+    background-color:$info-color !important;
+}
+.BGDarkGray {
+    background-color:$dark-gray !important;
+}
+.BGPrimary {
+    background-color:$primary-color !important;
+    form-error {
+        color:$white !important;}
+}
+.BGSecondary {
+    background-color:$secondary-color !important;
+}
+.show-for-print {
+   display: none;
+}
+.globalPad {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+@media all {
+  .page-break { display: none; }
+}
+
+@media print {
+    .page-break { display: block; page-break-before: always; }
+    .PrintModule { page-break-inside: avoid; }
+    
+    .hide-for-print {
+        display: none !important;
+    }
+    .show-for-print {
+        display: inline !important;
+    }
+    .row {
+        width: 100% !important;
+    }
+
+    img {
+        max-width: 100% !important;;
+    }
+}
+
+// PROFILE PICTURES
+.UserPicSmall  {
+    border:1px solid #fff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;  
+}
+
+// TOP BAR
+    // PRESTO LOGO
+    .presto {
+        font-family: 'Open Sans Condensed', sans-serif !important;
+        font-weight: 300 !important;
+        color:$white !important;
+        padding-right: 5px;
+    }
+    .top-bar {
+      background: $dark-gray;
+      ul {
+        background: $dark-gray;
+
+        li {
+          background: $dark-gray;
+
+          a {
+            color: $white;
+          }
+            label {
+              color: $medium-gray;
+          }
+        }
+      }
+    }

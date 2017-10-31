@@ -1,0 +1,110 @@
+<!--- Name and Location --->
+	<div class="row">
+		<div class="large-12 columns">
+			<h1 class="MakePrimary">|ProjectLongName| (|ProjectComponent|)</h1>
+			<h2 class="MakeSecondary">|AgencyLongName|</h2>
+			<p>
+				<cfif ProjectStreet1 NEQ "">
+					|ProjectAddress1|<br>
+				</cfif>
+				<cfif ProjectStreet2 NEQ "">
+					|ProjectAddress2|<br>
+				</cfif>
+				<cfif ProjectHood  NEQ "">
+					|ProjectNeighborhood|<br>
+				</cfif>
+			</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="large-12 columns">
+			<hr>
+		</div>
+	</div>
+<!---/ Name and Location --->
+
+<!--- Project Overview --->
+	<cfif ProjectOverview NEQ "">
+	<div class="row">
+		<div class="large-12 columns">
+			<h2 class="MakePrimary">Project Overview</h2>
+			<p>|ProjectOverview|</p>
+			<hr>
+		</div>
+	</div>
+	</cfif>
+<!---/ Project Overview --->
+
+<!--- Program Location --->
+	<cfif GEOCODELOCATION NEQ "none">
+	<div class="row">
+		<div class="large-12 columns">
+			<h2 class="MakePrimary">Project Location</h2>
+			<table width="100%">
+				<tr>
+					<td width="50%">
+						<a href="https://maps.google.com/?q=|GeoCode|" target="_blank">
+							<img src="//maps.googleapis.com/maps/api/staticmap?size=475x250&markers=%7Ccolor:0x6ECDDC%7C|GeoCode|&sensor=false&visual_refresh=true&scale=2&zoom=15&key=|GoogleAPIKey|" 
+								 border="1px" width="475" height="250"/>
+						</a>
+					</td>
+					<td width="50%">
+						<cfparam name="HideStreetView" default="0">
+						<cfif HideStreetView EQ 1>
+							<img src="img/NoImage.png" alt="No Image Available" >
+						<cfelse>
+							<img src="//maps.googleapis.com/maps/api/streetview?size=475x255&location=|GeoCode|&sensor=false&key=|GoogleAPIKey|<cfif ProjectGeoHeading NEQ "">&heading=|GeoHeading|</cfif>" 
+							 border="1px" width="475" height="250"/>
+						</cfif>
+						
+					</td>
+				</tr>
+			</table>
+			<hr>
+		</div>
+	</div>
+	</cfif>
+<!---/ Program Location --->
+
+<!--- At A Glance --->
+<div class="row">
+	<div class="large-12 columns">
+			<h2  class="MakePrimary">Program at a Glance</h2>
+			<table width="100%">
+				<tbody>
+				    <!--- Project Type --->
+				    <tr>
+				        <td width="200"><strong>Funding Category</strong></td>
+				        <td colspan="3">|ProjectComponent|</td>
+				    </tr>
+				    <!---/ Project Type --->				   
+				    <!--- Population Served --->
+				    <cfif popServed NEQ "">
+				    	<tr>
+					        <td width="200"><strong>Population Served</strong></td>
+					        <td colspan="3">|PopulationServed|</td>
+					    </tr>
+				    </cfif>
+				    <!---/ Population Served --->
+				    <!--- Services Provided --->
+				    <cfif ServicesProvided NEQ "">
+					    <tr>
+					        <td width="200"><strong>Services Provided</strong></td>
+					        <td colspan="3">|ServicesProvided|</td>
+					    </tr>
+				    </cfif>
+				    <!---/  Services Provided --->
+
+				    <!--- Housing Provided --->
+				    <cfif HousingProvided NEQ "">
+				    <tr>
+				        <td width="200"><strong>Housing Provided</strong></td>
+				        <td colspan="3">|HousingProvided|</td>
+				    </tr>
+				    </cfif>
+				    <!---/  Housing Provided --->
+				</tbody>
+			</table>
+	</div>
+</div>
+<!---/ At A Glance --->  
